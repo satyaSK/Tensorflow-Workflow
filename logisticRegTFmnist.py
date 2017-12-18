@@ -61,6 +61,6 @@ with tf.Session() as sess:
 
 ### Just for fun ###
 	print("Learning rate = {0}\nCross entropy loss fn(Natural choice)\nModel used Adaptive momentum optimizer to minimize loss\n".format(learning_rate))
-	#Tensorboard --logdir = "visualize"
+	#Tensorboard --logdir = "Visualize"
 	Name = "Visualize"
 	print("To get dataflow graph Use the command-> tensorboard --logdir=\"" + Name + "\" ")
