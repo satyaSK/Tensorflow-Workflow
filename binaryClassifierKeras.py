@@ -1,8 +1,8 @@
 '''
 WARNING: 
 
-It is a simple classifier and it is NOT optimized for best results
-Only use for learning purposed. Can be used on any dataset for basic beginner level image classification
+It is a simple classifier and it is NOT optimized for best results!
+Only use for learning purposes. Can be used on any dataset for basic beginner level image classification
 '''
 #import dependencies
 import numpy as numpy
