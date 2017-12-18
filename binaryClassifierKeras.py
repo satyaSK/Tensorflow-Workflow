@@ -1,4 +1,9 @@
-#Can be used on any dataset for basic beginner level image classification
+'''
+WARNING: 
+
+It is a simple classifier and it is NOT optimized for best results
+Only use for learning purposed. Can be used on any dataset for basic beginner level image classification
+'''
 #import dependencies
 import numpy as numpy
 from keras.models import Sequential
@@ -9,7 +14,7 @@ from keras import optimizers
 l,b = 64,64
 generator = ImageDataGenerator(rescale = 1./255)#for rescaling 0-255 to 0-1
 final_train_data=generator.flow_from_directory('dataset/train',
-	target_size=(l,b),
+	target_size=(l,b),#add required image path
 	batch_size=16,
 	class_mode='binary')
 
