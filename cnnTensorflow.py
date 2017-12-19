@@ -22,7 +22,7 @@ dropout = tf.placeholder(tf.float32, name='dropout')
 
 #Defining the model
 #1st Convolutional layer( Convolve - ReLU - MaxPool )
-#Different names for filters and biases are for understading purpose.
+#Different names for filters and biases in all the layers are for understading purpose, and are not necessarily required
 with tf.variable_scope('CONV1'):
 	images = tf.reshape(X, shape=[-1,28,28,1])
 	filters = tf.get_variable('filter',[5,5,1,16], initializer=tf.truncated_normal_initializer())
