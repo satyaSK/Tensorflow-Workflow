@@ -1,5 +1,6 @@
 #Accuracy achieved = 97.17% with 5 epochs.
 #import dependencies
+from tqdm import tqdm
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
@@ -74,7 +75,7 @@ with tf.Session() as sess:
 	
 	# I will update the code to add checkpoints, so for now bear with me :)
 	print("\nGood To Go - Training has Started\n")
-	for i in range(epochs):
+	for i in tqdm(range(epochs)):
 		epoch_loss = 0
 		for _ in range(num_batches):
 			X_batch, Y_batch = mnist.train.next_batch(batch_size)
