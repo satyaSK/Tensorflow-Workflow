@@ -1,5 +1,6 @@
 #Import dependencies
 import tensorflow as tf 
+from tqdm import tqdm
 import numpy as np 
 from tensorflow.examples.tutorials.mnist import input_data
 
@@ -38,7 +39,7 @@ with tf.Session() as sess:
 	writer = tf.summary.FileWriter("./Visualize", sess.graph) 
 	num_batches = int(mnist.train.num_examples/batch_size)
 	print("\nGood To Go - Training Starts\n")
-	for i in range(epochs):
+	for i in tqdm(range(epochs)):
 	 	epoch_loss = 0
 	 	for _ in range(num_batches):
 	 		X_batch, Y_batch = mnist.train.next_batch(batch_size)
