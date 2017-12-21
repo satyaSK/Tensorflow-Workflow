@@ -8,7 +8,7 @@ mnist = input_data.read_data_sets("/data/mnist", one_hot=True)
 
 #Defining hyperparameters
 batch_size = 128 
-leanring_rate = 0.01
+leanring_rate = tf.constant(0.01,tf.float32)
 epochs = 5
 dropout_p = 0.75
 classes = 10
