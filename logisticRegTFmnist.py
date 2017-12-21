@@ -8,7 +8,7 @@ mnist = input_data.read_data_sets('/data/mnist', one_hot=True)#Data
 
 #defining hyperparameters
 epochs = 50
-learning_rate = 0.001
+learning_rate = tf.constant(0.001,tf.float32)
 batch_size = 128
 
 #Defining placeholders for input/output
@@ -20,7 +20,10 @@ with tf.name_scope("Data"):
 W = tf.Variable(tf.random_normal([784,10],stddev=0.1), name='Weights')#Rough intuition-contribution of each pixel to the each class
 b = tf.Variable(tf.zeros([1,10]), name='Biases')
 
-#Defining the model
+
+#Defining the model(We have one input layer and directly an output layer, so sorry no neural networks! :(
+#But u can still make this a NN by adding one hidden layer(universal fn approximation)
+#dont forget to initialize the weights and biases (in NN) otherwise all nodes will be dead(if ur using ReLU activation) 
 logits = tf.matmul(X,W) + b 
 
 #Defining loss fn reduced mean of (softmax -> cross_entropy) and optimizer(AdamOptimizer)
