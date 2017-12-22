@@ -9,11 +9,12 @@ The above codes attempts to implement the CNN model using Tensorflow, and also K
 
 ## Pipeline
 ```
-Input Images -> Convolve(filters) -> Activation(ReLU) -> Max Pooling -> Flatten -> Fully Connected -> Logits -> Loss -> Backpropagate to update weights
+Input Data(Images) -> Convolve(filters) -> Activation(ReLU) -> Max Pooling -> Flatten -> Fully Connected -> Logits(prediction) -> Loss -> Backpropagate to update weights
 ```
 
 ## Dataflow Graph
 ![cnntensorflow](https://user-images.githubusercontent.com/34591573/34300433-0ad2c124-e74e-11e7-8c09-4af42f7cd5e6.png)
+Just focus on the Dataflow happening in the pipeline I mentioned above. The other confusing arrows in the graph are just because I included checkpoints(sorry for the confusion).
 
 ## Simplified Approach
 * Firstly, the data(funneled images in this case) is preprocessed into the required format.
