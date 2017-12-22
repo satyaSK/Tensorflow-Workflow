@@ -11,7 +11,7 @@ mnist = input_data.read_data_sets("/data/mnist", one_hot=True)
 #Defining hyperparameters
 batch_size = 128 
 learning_rate = tf.constant(0.01,dtype=tf.float32)
-epochs = 5
+epochs = 1
 dropout_p = 0.75
 classes = 10
 
