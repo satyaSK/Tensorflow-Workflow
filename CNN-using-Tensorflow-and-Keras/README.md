@@ -1,5 +1,5 @@
 # Convolutional Neural Networks
-The above codes attempts to implement the CNN model using Tensorflow and also Keras. Convolutional networks were first made popular by Yann Lecun, they are basically used for task involving images as they capture feature representations more accurately as compared to other neural networks. I have discussed about the approach below
+The above codes attempts to implement the CNN model using Tensorflow, and also Keras. Convolutional networks were first made popular by Yann Lecun, and they are basically used for tasks involving images as they capture feature representations more accurately as compared to other neural networks. I have discussed about the approach below
 
 ## Dependencies
 * Tensorflow
