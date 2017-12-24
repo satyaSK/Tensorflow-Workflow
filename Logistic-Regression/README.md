@@ -23,7 +23,7 @@ Notice how the data, weights and biases are passed into a model, which give out 
 ## Basic Usage
 For Running, type in terminal
 ```
-logisticRegTFmnist.py
+python logisticRegTFmnist.py
 ```
 I also included a dataflow graph, so for the beautiful visualization, type in terminal
 ```
