@@ -33,7 +33,7 @@ Just focus on the Dataflow happening in the pipeline I mentioned above. The othe
 ## Basic Usage
 For Running, type in terminal
 ```
-cnnTensorflow.py
+python cnnTensorflow.py
 ```
 For the beautiful visualization, type in terminal
 ```
