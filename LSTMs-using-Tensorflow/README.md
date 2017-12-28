@@ -7,7 +7,7 @@ Everything in life is a sequence. Here, I've tried to create a simple LSTM model
 * tqdm
 
 # The LSTM unit
-![lstm](https://user-images.githubusercontent.com/34591573/34419297-fc828638-ec28-11e7-9c55-b9b42f9827bb.png)
+![lstm](https://user-images.githubusercontent.com/34591573/34419489-329d85dc-ec2a-11e7-9068-c0e86d189887.png)
 I found this image from christopher olah's blogpost to be aestheticlly pleasing and also easy to understand(privided you've read the blog I linked above).
 
 # What's an LSTM bro?
