@@ -8,7 +8,7 @@ Everything in life is a sequence. Here, I've tried to create a simple LSTM model
 
 # The LSTM unit
 ![lstm](https://user-images.githubusercontent.com/34591573/34419489-329d85dc-ec2a-11e7-9068-c0e86d189887.png)
-I found this image from christopher olah's blogpost to be aestheticlly pleasing and also easy to understand(privided you've read the blog I linked above).
+I found this image from christopher olah's blogpost to be aestheticlly pleasing and also easy to understand, provided you've read the blog I linked above.
 
 # What's an LSTM bro?
 * LSTM's are a variant of the vanilla recurrent neural networks, which help in tackling the vanishing/exploding gradient problem. There are many other methods used(like clipping) to reduce the effect of this problem, but LSTM's seem to outperform them all.
