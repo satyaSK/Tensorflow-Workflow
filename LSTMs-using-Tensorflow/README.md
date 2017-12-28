@@ -6,6 +6,10 @@ Everything in life is a sequence. Here, I've tried to create a simple LSTM model
 * Numpy
 * tqdm
 
+# The LSTM unit
+![lstm](https://user-images.githubusercontent.com/34591573/34419297-fc828638-ec28-11e7-9c55-b9b42f9827bb.png)
+I found this image from christopher olah's blogpost to be aestheticlly pleasing and also easy to understand(privided you've read the blog I linked above).
+
 # What's an LSTM bro?
 * LSTM's are a variant of the vanilla recurrent neural networks, which help in tackling the vanishing/exploding gradient problem. There are many other methods used(like clipping) to reduce the effect of this problem, but LSTM's seem to outperform them all.
 * LSTM's are used for learning long-term dependencies, which otherwise, are not possible with your usual recurrent nets. An LSTM unit achieves this by effectively using its input, output and forget gates(which are described in greater depth, in the blogpost I linked above).
@@ -14,10 +18,11 @@ Everything in life is a sequence. Here, I've tried to create a simple LSTM model
 ## Simplified Approach
 * The images I'm dealing with are 28x28 funnelled images, which we want to firstly reshape into the required tensor, for our model to process.
 * So now, we can perceive the images to be of 28 rows having 28 pixels per row.
-* The 28 rows can be thought of as the timesteps by which we'll be unrolling the LSTM layer. So now after unrolling, each of the 28 timesteps(28 rows) will be taking in the 28 pixels belonging to each row. This will happen for batch_size number of images.
+* The 28 rows can be thought of as the timesteps by which we'll be unrolling the LSTM layer. So now after unrolling, each of the LSTM's 28 timesteps(28 rows) will be taking in the 28 pixels as inputs, belonging to each row. This will happen for batch_size number of images.
 * Once we feed in the image, we only care about the output at the 28th timestep(that is, after the 28 pixels of the 28th row are hot and ready). At this point, the LSTM layer has stored a mixed composition of all the input it has seen so far.
-* Now the output at the 28th timestep is taken, multiplied by a weight matrix(also add a bias), to give a prediction.
-* These predictions are compared to the actulal values, the loss is calculated(cross-entropy), and then by using BPTT(backpropagation through time), the weights are updated in the right direction.
+* Now the output at the 28th timestep is taken, multiplied by a weight matrix(also a bias is added), to give out probablity distribution over the classes.
+* These predictions are compared to the actulal values, the loss is calculated(using the cross-entropy loss fn), and then by using BPTT(backpropagation through time), the weights are updated in the right direction.
+* It is important to keep track of your training accuracy while trining the network, to see the progress and check for signs of overfitting. Also dropout wrappers can be included to generalize the the model(I haven't included this in the code).
 * I achieved a test accuracy of 98.76% with this simple LSTM model, I am still working on LSTM's and related hyperparameters, to try and better understand them, so do look for updates in the future.
 
 ## Basic Usage
