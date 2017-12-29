@@ -27,7 +27,7 @@ shapedInputs = tf.unstack(X, time_steps,1)# convert it into a list of tensor of 
 
 with tf.name_scope('LSTM'):
 	cell = rnn.BasicLSTMCell(num_units, forget_bias = 1)# set the forgrt gate bias of the LSTM to 1(It is a default value but Im explicitly mentioning it)
-	cell = tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=keep_prob)
+	cell = tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=keep_prob)#this is the LSTM layer wrapped with dropout
 	all_outputs, all_hidden_states = rnn.static_rnn(cell, shapedInputs, dtype='float32')
 
 prediction = tf.matmul(all_outputs[-1],W2) + b2
