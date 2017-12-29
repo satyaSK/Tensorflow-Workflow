@@ -2,7 +2,7 @@
 ## figure out why softmax is not required
 import tensorflow as tf 
 import numpy as np 
-import tqdm
+from tqdm import tqdm
 from tensorflow.examples.tutorials.mnist import input_data
 
 # Get data
@@ -53,7 +53,7 @@ with tf.Session() as sess:
 
     num_batches = int(mnist.train.num_examples/batch_size)
 
-    for i in range(epochs):
+    for i in tqdm(range(epochs)):
         total_error = 0
         for _ in tqdm(range(num_batches)):
             X_batch, Y_batch = mnist.train.next_batch(batch_size)
