@@ -1,7 +1,7 @@
 import tensorflow as tf 
 from tensorflow.examples.tutorials.mnist import input_data
 from tensorflow.contrib import rnn
-import tqdm
+from tqdm import tqdm
 
 #get data
 mnist = input_data.read_data_sets("/data/mnist", one_hot=True)
@@ -14,6 +14,7 @@ num_units = 128 #number of intivisual LSTM units in LSTM cell
 n_classes = 10
 learning_rate = 0.01
 epochs = 5
+keep_prob = 0.5 #adding dropout
 
 with tf.name_scope('Data'):
 	X = tf.placeholder(tf.float32, [None, time_steps, input_size], name='X')
@@ -22,11 +23,12 @@ with tf.name_scope('Data'):
 W2 = tf.Variable(tf.random_normal([num_units, n_classes]))
 b2 = tf.Variable(tf.random_normal([n_classes]))
 
-MyInputs = tf.unstack(X, time_steps,1)# convert it into a list of tensor of shape [batch_size, input_size] of length time_steps which is the input taken by static_rnn
+shapedInputs = tf.unstack(X, time_steps,1)# convert it into a list of tensor of shape [batch_size, input_size] of length time_steps which is the input taken by static_rnn
 
-with tf.name_scope('LSTM_layer'):
-	lstm_layer = rnn.BasicLSTMCell(num_units, forget_bias = 1)# set the forgrt gate bias of the LSTM to 1(It is a default value but Im explicitly mentioning it)
-	all_outputs, all_hidden_states = rnn.static_rnn(lstm_layer, MyInputs, dtype='float32')
+with tf.name_scope('LSTM'):
+	cell = rnn.BasicLSTMCell(num_units, forget_bias = 1)# set the forgrt gate bias of the LSTM to 1(It is a default value but Im explicitly mentioning it)
+	cell = tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=keep_prob)
+	all_outputs, all_hidden_states = rnn.static_rnn(cell, shapedInputs, dtype='float32')
 
 prediction = tf.matmul(all_outputs[-1],W2) + b2
 
