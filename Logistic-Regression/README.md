@@ -30,8 +30,8 @@ Notice how the data, weights and biases are passed into a model, which give out 
 ![validation](https://user-images.githubusercontent.com/34591573/34531542-a57540ba-f0d8-11e7-8361-445aeb7b857d.png)
 
 * Here, the validation accuracy I got after ```epoch = 30``` has remained almost unchanged, while the training accuracy has increased by almost 5% at ```epoch = 40```
-* This shows that we should stop our training at ```epoch = 30``` itself, because from here onwards, our model will have started to overfit the data.
-* Now thanks to the validation set, we can go back to the model and reset our hyperparameter ```epochs = 30```, and retrain our model to find generalized patterns in our data.
+* This tells us that we should stop our training at ```epochs = 30``` itself, because from here onwards, our model will have started to overfit the data.
+* Now, thanks to the validation set, we can go back to the model and reset our hyperparameter ```epochs = 30```, and retrain our model to find generalized patterns in our data.
 
 ## Basic Usage
 For Running, type in terminal
