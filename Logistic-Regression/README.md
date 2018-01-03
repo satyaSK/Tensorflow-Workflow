@@ -6,6 +6,7 @@ The above code attempts to implement logistic regression using the Tensorflow fr
 ## Dependencies
 * Tensorflow
 * Numpy
+*tqdm
 
 ## Dataflow Graph
 ![logistic-regression](https://user-images.githubusercontent.com/34591573/34303575-048a3aaa-e75c-11e7-83b7-4675a0a88eae.png)
@@ -25,6 +26,7 @@ Notice how the data, weights and biases are passed into a model, which give out 
 * This validation set will give us an idea about how well the model is performing on the data which it hasn't seen. 
 * As opposed to the testing set, the validation set helps us get an idea about when the model has started to overfit the data, giving an indication to abort the training. This can be seen at the point where the training accuracy seems to be increasing, but the validation accuracy has frozen or might even start to decrease!
 * We want to stop our training at this point because we want our model to generalize to the data, to find meaningful patterns and not overfit and simply memorize the data.
+
 ![validation](https://user-images.githubusercontent.com/34591573/34531542-a57540ba-f0d8-11e7-8361-445aeb7b857d.png)
 
 * Here, the validation accuracy I got after ```epoch = 30``` has remained almost unchanged, while the training accuracy has increased by almost 5% at ```epoch = 40```
