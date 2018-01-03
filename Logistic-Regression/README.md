@@ -1,12 +1,12 @@
 # Logistic Regression v2
-The above code attempts to implement logistic regression using the Tensorflow framework. There are 2 versions of the logistic regression code which I've put up. One is the basic version, and the second vaersion has the following changes:
+The above code attempts to implement logistic regression using the Tensorflow framework. There are 2 versions of the logistic regression code which I've put up. One is the basic version, and the [second version](https://github.com/satyaSK/Tensorflow-Basic/blob/master/Logistic-Regression/logisticReg_v2.py) has the following changes:
 * I have encapsulated all the operations within functions, so they can be reused(it also improves readability alot).
 * There is a validation set included in the second version, which helps in giving an idea about overfitting(so we can choose optimal hyperparameters).
 
 ## Dependencies
 * Tensorflow
 * Numpy
-*tqdm
+* tqdm
 
 ## Dataflow Graph
 ![logistic-regression](https://user-images.githubusercontent.com/34591573/34303575-048a3aaa-e75c-11e7-83b7-4675a0a88eae.png)
