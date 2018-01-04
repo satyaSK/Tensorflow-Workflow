@@ -63,7 +63,7 @@ with tf.Session() as sess:
 	writer = tf.summary.FileWriter("./Visualize", sess.graph) 
 	num_batches = int(mnist.train.num_examples/batch_size)
 	print("\nGood To Go - Training Starts\n")
-	for i in rangetqdm((epochs+1)):
+	for i in tqdm(range(epochs+1)):
 	 	epoch_loss = 0
 	 	for _ in range(num_batches):
 	 		X_batch, Y_batch = mnist.train.next_batch(batch_size)
