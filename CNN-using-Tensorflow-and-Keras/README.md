@@ -19,6 +19,7 @@ Just focus on the Dataflow happening in the pipeline I mentioned above. The othe
 ## Simplified Approach
 * Firstly, the data(funneled images in this case) is preprocessed into the required format.
 * Randomly initiated filters(with size and stride) are made to convolve over the images(with appropriate padding) to capture their feature representation and spacial information.
+* Image data is said to be "spacially invariant", so for example an image contains an apple, it doesn't matter where the apple is in an image, so convnets exploit this idea.
 * The ReLU activation function is applied, followed by a Pooling(Max) layer.
 * The output of the pooling layer is flattened and passed into the fully connected layer, which helps in finding the non-linear patterns within feature representations of the images.
 * The output of the last hidden layer is passed through the softmax function which gives a probablity distribution over the classes.
