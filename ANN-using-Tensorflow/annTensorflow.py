@@ -1,5 +1,4 @@
-## Write the readme
-## figure out why softmax is not required
+#import dependencies
 import tensorflow as tf 
 import numpy as np 
 from tqdm import tqdm
